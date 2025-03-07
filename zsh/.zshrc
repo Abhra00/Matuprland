@@ -101,7 +101,7 @@ export SUDO_PROMPT="$fg[white]Deploying $fg[red]root access for %u $fg[blue]pass
 #   ┃ ┣┫┣   ┃┃┣┫┃┃┃┃┃┃┃ ┃ 
 #   ┻ ┛┗┗┛  ┣┛┛┗┗┛┛ ┗┣┛ ┻ 
 #                         
-# !!! USING STARSHIP PROMPT FOR THAT 🚀 !!!
+# !!! USING PURE ZSH PROMPT & IT WILL BE DOWNLOADED AUTOMATICALLY BY THE PLUGIN HELPER 🚀 !!!
 
 
 
@@ -164,10 +164,54 @@ yazicd() {
 bindkey -s '^o' '^uyazicd\n'
 
 
-#  ┏┓┓ ┳┳┏┓┳┳┓┏┓
-#  ┃┃┃ ┃┃┃┓┃┃┃┗┓
-#  ┣┛┗┛┗┛┗┛┻┛┗┗┛
-#               
+#  ┓┏┳┳┳┓  ┳┳┓┏┓┳┓┏┓  ┏┓  ┓┏┓┏┓┓┏┳┓┳┳┓┳┓┏┓
+#  ┃┃┃┃┃┃━━┃┃┃┃┃┃┃┣   ┣╋  ┃┫ ┣ ┗┫┣┫┃┃┃┃┃┗┓
+#  ┗┛┻┛ ┗  ┛ ┗┗┛┻┛┗┛  ┗┻  ┛┗┛┗┛┗┛┻┛┻┛┗┻┛┗┛
+#                                         
+bindkey -v
+export KEYTIMEOUT=1
+
+# Change cursor shape for different vi modes.
+function zle-keymap-select () {
+    case $KEYMAP in
+        vicmd) echo -ne '\e[1 q';;      # block
+        viins|main) echo -ne '\e[5 q';; # beam
+    esac
+}
+zle -N zle-keymap-select
+zle-line-init() {
+    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+    echo -ne "\e[5 q"
+}
+zle -N zle-line-init
+echo -ne '\e[5 q' # Use beam shape cursor on startup.
+preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
+
+# Basic binds deleting char both in normal or vi mode
+bindkey '^[[3~' delete-char
+bindkey -v '^?' backward-delete-char
+
+# Edit line in vim with ctrl-e:
+autoload edit-command-line; zle -N edit-command-line
+bindkey '^e' edit-command-line
+
+# Vicmd specific binds
+bindkey -M vicmd '^e' edit-command-line
+bindkey -M vicmd '^?' vi-delete-char
+bindkey -M visual '^?' vi-delete-char
+
+# Additionaly set up basic Emacs-style navigation
+bindkey '^A' beginning-of-line
+bindkey '^E' end-of-line
+bindkey '^F' forward-char
+bindkey '^B' backward-char
+
+
+
+#  ┏┓┓ ┳┳┏┓┳┳┓┏┓  ┏┓  ┏┓┓ ┳┳┏┓┳┳┓  ┏┓┏┓┏┓┏┓┳┏┓┳┏┓  ┓┏┓┏┓┓┏┳┓┳┳┓┳┓┏┓
+#  ┃┃┃ ┃┃┃┓┃┃┃┗┓  ┣╋  ┃┃┃ ┃┃┃┓┃┃┃  ┗┓┃┃┣ ┃ ┃┣ ┃┃   ┃┫ ┣ ┗┫┣┫┃┃┃┃┃┗┓
+#  ┣┛┗┛┗┛┗┛┻┛┗┗┛  ┗┻  ┣┛┗┛┗┛┗┛┻┛┗  ┗┛┣┛┗┛┗┛┻┻ ┻┗┛  ┛┗┛┗┛┗┛┻┛┻┛┗┻┛┗┛
+#                                                                  
 # basic plugin manager to automatically import zsh plugins
 # script by mattmc3 from https://github.com/mattmc3/zsh_unplugged
 # clone a plugin, identify its init file, source it, and add it to your fpath
@@ -194,55 +238,16 @@ function plugin-load {
 
 # list of github repos of plugins
 repos=(
+	sindresorhus/pure
 	zsh-users/zsh-autosuggestions
 	zdharma-continuum/fast-syntax-highlighting
 	zsh-users/zsh-history-substring-search
 )
 plugin-load $repos
 
-
-
-#  ┓┏┳┳┳┓  ┳┳┓┏┓┳┓┏┓  ┏┓  ┓┏┓┏┓┓┏┳┓┳┳┓┳┓┏┓
-#  ┃┃┃┃┃┃━━┃┃┃┃┃┃┃┣   ┣╋  ┃┫ ┣ ┗┫┣┫┃┃┃┃┃┗┓
-#  ┗┛┻┛ ┗  ┛ ┗┗┛┻┛┗┛  ┗┻  ┛┗┛┗┛┗┛┻┛┻┛┗┻┛┗┛
-#                                         
-bindkey -v
-export KEYTIMEOUT=1
-
-# Change cursor shape for different vi modes.
-function zle-keymap-select () {
-    case $KEYMAP in
-        vicmd) echo -ne '\e[1 q';;      # block
-        viins|main) echo -ne '\e[5 q';; # beam
-    esac
-}
-zle -N zle-keymap-select
-zle-line-init() {
-    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-    echo -ne "\e[5 q"
-}
-zle -N zle-line-init
-echo -ne '\e[5 q' # Use beam shape cursor on startup.
-preexec() { echo -ne '\e[5 q' ;} # Use beam shape cursor for each new prompt.
-
-# Keybinds
+# Keybinds for plugins
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
-bindkey '^[[3~' delete-char
-bindkey -v '^?' backward-delete-char
-
-# Edit line in vim with ctrl-e:
-autoload edit-command-line; zle -N edit-command-line
-bindkey '^e' edit-command-line
-bindkey -M vicmd '^e' edit-command-line
-bindkey -M vicmd '^?' vi-delete-char
-bindkey -M visual '^?' vi-delete-char
-
-# Additionaly set up basic Emacs-style navigation
-bindkey '^A' beginning-of-line
-bindkey '^E' end-of-line
-bindkey '^F' forward-char
-bindkey '^B' backward-char
 
 
 
@@ -250,7 +255,6 @@ bindkey '^B' backward-char
 #  ┗┓┣┫┣ ┃ ┃   ┃┃┃ ┃ ┣ ┃┓┣┫┣┫ ┃ ┃┃┃┃┃
 #  ┗┛┛┗┗┛┗┛┗┛  ┻┛┗ ┻ ┗┛┗┛┛┗┛┗ ┻ ┻┗┛┛┗
 #
-eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 source <(fzf --zsh)
 

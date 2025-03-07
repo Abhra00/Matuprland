@@ -2,6 +2,25 @@
 # Prompt
 # -----------------------------------------------------
 
-eval "$(starship init bash)"
+###------------------- PROMPT -----------------------###
 
+function parse_git_dirty {
+  STATUS="$(git status 2> /dev/null)"
+  if [[ $? -ne 0 ]]; then printf ""; return; else printf " ["; fi
+  if echo "${STATUS}" | grep -c "renamed:"         &> /dev/null; then printf " >"; else printf ""; fi
+  if echo "${STATUS}" | grep -c "branch is ahead:" &> /dev/null; then printf " !"; else printf ""; fi
+  if echo "${STATUS}" | grep -c "new file::"       &> /dev/null; then printf " +"; else printf ""; fi
+  if echo "${STATUS}" | grep -c "Untracked files:" &> /dev/null; then printf " ?"; else printf ""; fi
+  if echo "${STATUS}" | grep -c "modified:"        &> /dev/null; then printf " *"; else printf ""; fi
+  if echo "${STATUS}" | grep -c "deleted:"         &> /dev/null; then printf " -"; else printf ""; fi
+  printf " ]"
+}
+
+parse_git_branch() {
+  git rev-parse --abbrev-ref HEAD 2> /dev/null
+}
+
+
+
+PS1="\[\e[1;31m\]\$(parse_git_branch)\[\033[34m\]\$(parse_git_dirty)\n\[\033[1;33m\] \[\e[1;37m\] \w \[\e[1;33m\]󰅂\[\e[0;37m\] "
 
