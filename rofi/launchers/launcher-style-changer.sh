@@ -12,9 +12,8 @@ rofiStyleDir="$HOME/.config/rofi/launchers/styles"
 rofiAssetDir="$HOME/.config/rofi/launchers/assets"
 rofiTheme="$HOME/.config/rofi/applets/rofiSelect.rasi"
 
-#// set rofi scaling
+#// set rofi font scaling
 font_scale=10
-[[ "${font_scale}" =~ ^[0-9]+$ ]] || font_scale=${ROFI_SCALE:-10}
 
 # Element vars
 elem_border=$((2 * 5))
