@@ -1,0 +1,224 @@
+# Swayimg configuration file.
+# vim: filetype=dosini
+
+# This file contains the default configuration.
+# The viewer searches for the config file in the following locations:
+# 1. $XDG_CONFIG_HOME/swayimg/config
+# 2. $HOME/.config/swayimg/config
+# 3. $XDG_CONFIG_DIRS/swayimg/config
+# 4. /etc/xdg/swayimg/config
+
+# Any of these options can be overridden using the --config argument
+# on the command line, for instance:
+# $ swayimg --config="general.mode=gallery"
+
+################################################################################
+# General configuration
+################################################################################
+[general]
+# Mode at startup (viewer/gallery)
+mode = viewer
+# Window position (parent or absolute coordinates, e.g. 100,200)
+position = parent
+# Window size (fullscreen/parent/image, or absolute size, e.g. 800,600)
+size = parent
+# Use window decoration (yes/no)
+decoration = no
+# Action performed by SIGUSR1 signal (same format as for key bindings)
+sigusr1 = reload
+# Action performed by SIGUSR2 signal (same format as for key bindings)
+sigusr2 = next_file
+# Application ID and window class name
+app_id = swayimg
+
+################################################################################
+# Viewer mode configuration
+################################################################################
+[viewer]
+# Window background color (RGBA)
+window = #00000000
+# Background for transparent images (grid/RGBA)
+transparency = grid
+# Default image scale (optimal/fit/width/height/fill/real)
+scale = optimal
+# Keep absolute zoom across images (yes/no)
+keep_zoom = no
+# Initial image position
+position = center
+# Fix position of the image on the window surface (yes/no)
+fixed = yes
+# Anti-aliasing mode (none/box/bilinear/bicubic/mks13)
+antialiasing = mks13
+# Run slideshow at startup (yes/no)
+slideshow = no
+# Slideshow image display time (seconds)
+slideshow_time = 3
+# Number of previously viewed images to store in cache
+history = 1
+# Number of preloaded images (read ahead)
+preload = 1
+
+################################################################################
+# Gallery mode configuration
+################################################################################
+[gallery]
+# Size of the thumbnail (pixels)
+size = 200
+# Max number of thumbnails in memory cache, 0 for unlimited
+cache = 100
+# Enable/disable storing thumbnails in persistent storage (yes/no)
+pstore = no
+# Fill the entire tile with thumbnail (yes/no)
+fill = yes
+# Anti-aliasing mode for thumbnails (none/box/bilinear/bicubic/mks13)
+antialiasing = mks13
+# Background color of the window (RGBA)
+window = #00000000
+# Background color of the tile (RGBA)
+background = #202020ff
+# Background color of the selected tile (RGBA)
+select = #404040ff
+# Border color of the selected tile (RGBA)
+border = #000000ff
+# Shadow color of the selected tile (RGBA)
+shadow = #000000ff
+
+################################################################################
+# Image list configuration
+################################################################################
+[list]
+# Default order (none/alpha/reverse/random)
+order = alpha
+# Looping list of images (yes/no)
+loop = yes
+# Read directories recursively (yes/no)
+recursive = no
+# Open all files in the directory of the specified file (yes/no)
+all = no
+
+################################################################################
+# Font configuration
+################################################################################
+[font]
+# Font name
+name = monospace
+# Font size (pt)
+size = 14
+# Font color (RGBA)
+color = #ccccccff
+# Shadow color (RGBA)
+shadow = #000000d0
+# Background color (RGBA)
+background = #00000000
+
+################################################################################
+# Image meta info scheme (format, size, EXIF, etc)
+################################################################################
+[info]
+# Show on startup (yes/no)
+show = yes
+# Timeout to hide info (seconds, 0 to always show)
+info_timeout = 5
+# Timeout to hide status message (seconds)
+status_timeout = 3
+
+# Display scheme for viewer mode (position = content)
+[info.viewer]
+top_left = +name,+format,+filesize,+imagesize,+exif
+top_right = index
+bottom_left = scale,frame
+bottom_right = status
+
+# Display scheme for gallery mode (position = content)
+[info.gallery]
+top_left = none
+top_right = none
+bottom_left = none
+bottom_right = name,status
+
+################################################################################
+# Viewer mode key binding configuration: key = action [parameters]
+################################################################################
+[keys.viewer]
+F1 = help
+Home = first_file
+End = last_file
+Prior = prev_file
+Next = next_file
+Space = next_file
+Shift+r = rand_file
+Shift+d = prev_dir
+d = next_dir
+Shift+o = prev_frame
+o = next_frame
+c = skip_file
+Shift+s = slideshow
+s = animation
+f = fullscreen
+Return = mode
+Left = step_left 10
+Right = step_right 10
+Up = step_up 10
+Down = step_down 10
+Equal = zoom +10
+Plus = zoom +10
+Minus = zoom -10
+w = zoom width
+Shift+w = zoom height
+z = zoom fit
+Shift+z = zoom fill
+0 = zoom real
+BackSpace = zoom optimal
+Alt+s = scale
+Alt+z = keep_zoom
+bracketleft = rotate_left
+bracketright = rotate_right
+m = flip_vertical
+Shift+m = flip_horizontal
+a = antialiasing next
+Shift+a = antialiasing prev
+r = reload
+i = info
+Shift+Delete = exec rm -f "%"; skip_file
+Escape = exit
+q = exit
+# Mouse related
+ScrollLeft = step_right 5
+ScrollRight = step_left 5
+ScrollUp = step_up 5
+ScrollDown = step_down 5
+Ctrl+ScrollUp = zoom +10
+Ctrl+ScrollDown = zoom -10
+Shift+ScrollUp = prev_file
+Shift+ScrollDown = next_file
+Alt+ScrollUp = prev_frame
+Alt+ScrollDown = next_frame
+
+################################################################################
+# Gallery mode key binding configuration: key = action [parameters]
+################################################################################
+[keys.gallery]
+F1 = help
+Home = first_file
+End = last_file
+Left = step_left
+Right = step_right
+Up = step_up
+Down = step_down
+Prior = page_up
+Next = page_down
+c = skip_file
+f = fullscreen
+Return = mode
+a = antialiasing next
+Shift+a = antialiasing prev
+r = reload
+i = info
+Shift+Delete = exec rm -f "%"; skip_file
+Escape = exit
+q = exit
+# Mouse related
+ScrollLeft = step_right
+ScrollRight = step_left
+ScrollUp = step_up
+ScrollDown = step_down
