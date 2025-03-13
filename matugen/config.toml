@@ -73,6 +73,11 @@ output_path = '~/.config/qt5ct/colors/matugen-qt5ct.conf'
 input_path = '~/.config/matugen/templates/qtct-colors.conf'
 output_path = '~/.config/qt6ct/colors/matugen-qt6ct.conf'
 
+# Kvantum
+[templates.kvantum]
+input_path = '~/.config/matugen/templates/matugen.kvconfig'
+output_path = '~/.config/Kvantum/matugen/matugen.kvconfig'
+
 # Cava
 [templates.cava]
 input_path = '~/.config/matugen/templates/matugen-cava'
