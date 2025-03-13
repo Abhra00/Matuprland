@@ -29,7 +29,7 @@ alias za="zathura"
 alias code="vscodium"
 alias ytdl="yt-dlp --no-mtime"
 alias swi="swayimg-hyprland.sh"
-alias swi="sysmaintenance.sh"
+alias sysm="sysmaintenance.sh"
 
 # aliases to clean up home directory
 alias wget=wget --hsts-file="$XDG_DATA_HOME/wget-hsts"
