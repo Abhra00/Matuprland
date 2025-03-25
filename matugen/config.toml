@@ -83,10 +83,10 @@ output_path = '~/.config/Kvantum/matugen/matugen.kvconfig'
 input_path = '~/.config/matugen/templates/matugen-cava'
 output_path = '~/.config/cava/config'
 
-# Neovim
-[templates.neovim]
-input_path = '~/.config/matugen/templates/matugen-colors.vim'
-output_path = '~/.cache/wal/colors-wal.vim'
+# Neovim & Nvchad
+[templates.neovim-nvchad]
+input_path = '~/.config/matugen/templates/matugen-nvchad.lua'
+output_path = '~/.config/nvim/nvmatuchad/matugen-nvchad.lua'
 
 # Pywalfox
 [templates.pywalfox]
