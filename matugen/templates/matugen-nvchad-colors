@@ -1,0 +1,16 @@
+{{ colors.surface.default.hex }}
+{{ colors.error.default.hex }}
+{{ colors.primary.default.hex }}
+{{ colors.tertiary.default.hex }}
+{{ colors.on_primary_container.default.hex }}
+{{ colors.on_secondary_container.default.hex }}
+{{ colors.secondary.default.hex }}
+{{ colors.on_surface.default.hex }}
+{{ colors.surface_bright.default.hex }}
+{{ colors.error.default.hex }}
+{{ colors.primary.default.hex }}
+{{ colors.tertiary.default.hex }}
+{{ colors.on_primary_container.default.hex }}
+{{ colors.on_secondary_container.default.hex }}
+{{ colors.secondary.default.hex }}
+{{ colors.on_surface.default.hex }}
