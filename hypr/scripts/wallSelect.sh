@@ -24,7 +24,7 @@
 # Dependencies:
 #   → Core: hyprland, rofi, jq, xxhsum (xxhash)
 #   → Media: swww, imagemagick
-#   → GNU: findutils, coreutils
+#   → GNU: findutils, coreutils, bc
 
 
 
