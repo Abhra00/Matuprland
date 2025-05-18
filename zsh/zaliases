@@ -17,7 +17,7 @@ alias lf="lfcd"
 alias locate="plocate"
 alias tp="trash-put"
 alias tpr="trash-restore"
-alias cat='bat --theme=matugen-bat-colors'
+alias cat='bat --theme=base16'
 alias grep='grep --color=always'
 
 # application aliases

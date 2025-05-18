@@ -4,7 +4,7 @@ return {
         if output.stderr ~= "" then
             ya.notify({
                 title = "lazygit",
-                content = "Not in a git directory",
+                content = "Not in a git directory\nError: " .. output.stderr,
                 level = "warn",
                 timeout = 5,
             })

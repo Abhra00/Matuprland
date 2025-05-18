@@ -137,5 +137,5 @@ swww query || swww-daemon --format xrgb
 
 # Run matugen script
 sleep 0.5
-[[ -n "$wall_selection" ]] && "$scriptsDir/matugenMagick.sh" --dark
+[[ -n "$wall_selection" ]] && "$scriptsDir/wallMagick.sh" --dark
 
