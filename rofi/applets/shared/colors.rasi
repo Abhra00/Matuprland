@@ -15,7 +15,7 @@
        background-alpha: #2a2325b3;
        foreground:       #c1c1c1;
        border-color:     #2a2325;
-       selected:         #c1c1c1;
+       selected:         #5f8787;
        selected-text:    #505050;
        active:           #5f8787;
        urgent:           #999999;

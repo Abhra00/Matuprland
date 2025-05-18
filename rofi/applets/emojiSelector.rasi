@@ -131,7 +131,7 @@ element selected.normal {
     background-color:            inherit;
     text-color:                  inherit;
     border:                      0px 3px 0px 3px;
-    border-color:                @border-color;
+    border-color:                @active;
 }
 element selected.urgent {
     background-color:            inherit;
