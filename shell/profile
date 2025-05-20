@@ -9,7 +9,6 @@
 #  ┗┛┛┗┗┛┛┗┗┛┛┗  ┛┗┗┛┣┛┛┗┗┛┛┗┛┗┻┛  ┗┛┻┛┗┛┗┛  ┛┗  ┗┛┛┗┛┗┻┛
 #
 
-
 # shellcheck disable=SC2155
 
 # Profile file, runs on login. Environmental variables are set here.
@@ -21,8 +20,8 @@ unsetopt PROMPT_SP 2>/dev/null
 
 # Variables
 export EDITOR="nvim"
-export TERMINAL="foot"
-export BROWSER="librewolf"
+export TERMINAL="kitty"
+export BROWSER="org.qutebrowser.qutebrowser.desktop"
 
 # Home cleanup
 export XDG_CONFIG_HOME="$HOME/.config"
@@ -36,11 +35,17 @@ export CARGO_HOME="$XDG_DATA_HOME/cargo"
 # Spicetify
 export PATH="$PATH:$HOME/.spicetify"
 
+# Fzf opts
+export FZF_DEFAULT_OPTS="--style=full --height=90% --pointer '>' \
+                --color 'pointer:green:bold,bg+:-1:,fg+:green:bold,info:blue:bold,marker:yellow:bold,hl:gray:bold,hl+:yellow:bold' \
+                --input-label ' Search ' --color 'input-border:blue,input-label:blue:bold' \
+                --list-label ' Results ' --color 'list-border:green,list-label:green:bold' \
+                --preview-label ' Preview ' --color 'preview-border:magenta,preview-label:magenta:bold'"
 
 #  ┓ ┏┓┳┳┳┓┏┓┓┏  ┓┏┓┏┏┓┳┓┓ ┏┓┳┓┳┓
 #  ┃ ┣┫┃┃┃┃┃ ┣┫  ┣┫┗┫┃┃┣┫┃ ┣┫┃┃┃┃
 #  ┗┛┛┗┗┛┛┗┗┛┛┗  ┛┗┗┛┣┛┛┗┗┛┛┗┛┗┻┛
-#                                
+#
 # Starting Wayland
 if [ -z "${DISPLAY}" ] && [ "${XDG_VTNR}" -eq 1 ]; then
   dbus-launch Hyprland

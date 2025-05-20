@@ -86,6 +86,11 @@ text/x-c++src=nvim.desktop
 text/plain=nvim.desktop
 text/tcl=nvim.desktop
 text/x-java=nvim.desktop
+text/html=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/http=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/https=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/about=org.qutebrowser.qutebrowser.desktop
+x-scheme-handler/unknown=org.qutebrowser.qutebrowser.desktop
 
 [Added Associations]
 image/png=swayimg.desktop;

@@ -6,22 +6,19 @@
  */
 
 
-/*------------Importing Matugen Colors---------------*/
-@import "matugen/matugen-waybar.css";
-
 
 /*------------Global Properties-----------------*/
 * {
     border: none;
     border-radius: 0px;
-    font-family: GeistMono Nerd Font Propo;
+    font-family: Iosevka Nerd Font Propo;
     font-size: 12px;
     min-height: 0;
 }
 
 /*------------Window--------------------*/
 #window{
-    background: @surface;
+    background: #1a1b26;
     padding-left: 15px;
     padding-right: 15px;
     border-radius: 16px;
@@ -33,27 +30,27 @@
 
 /*----------Waybar Window------------*/
 window#waybar {
-    background: @surface-alpha;
+    background: rgba(26, 27, 38, 0.5);
 }
 
 /*-----------Tooltip--------------*/
 tooltip {
-  background: @surface;
-  border: 2px solid @tertiary;
+  background: #15161e;
+  border: 2px solid #7aa2f7;
   border-radius: 12px;
 }
 tooltip label {
-  color: @on_surface;
+  color: #c0caf5;
   padding: 6px;
 }
 
 /*---------Workspaces-----------------*/
 #workspaces {
-    background: @surface;
+    background: #15161e;
     margin: 5px 5px;
     padding: 8px 5px;
     border-radius: 16px;
-    color: @on_surface;
+    color: #c0caf5;
 }
 #workspaces button {
     font-weight: bold;
@@ -61,14 +58,14 @@ tooltip label {
     margin: 0px 3px;
     border-radius: 16px;
     color: transparent;
-    background: @surface_container_highest;
+    background: #c0caf5;
     transition: all 0.3s ease-in-out;
 }
 
 #workspaces button.active {
     font-weight: bold;
-    background-color: @primary;
-    color: @scrim;
+    background-color: #9ece6a;
+    color: #15161e;
     border-radius: 16px;
     min-width: 50px;
     background-size: 400% 400%;
@@ -77,8 +74,8 @@ tooltip label {
 
 #workspaces button:hover {
     font-weight: bold;
-    background-color: @tertiary;
-    color: @scrim;
+    background-color: #7aa2f7;
+    color: #15161e;
     border-radius: 16px;
     min-width: 50px;
     background-size: 400% 400%;
@@ -86,8 +83,8 @@ tooltip label {
 
 #workspaces button.urgent {
     font-weight: bold;
-    background-color: @error;
-    color: @scrim;
+    background-color: #f7768e;
+    color: #15161e;
     border-radius: 16px;
     min-width: 50px;
     background-size: 400% 400%;
@@ -98,10 +95,10 @@ tooltip label {
 /*-----------SwayNC & Weather------------*/
 #custom-swaync, #custom-weather {
     font-weight: bold;
-    background: @surface;
+    background: #15161e;
     margin: 5px; 
     padding: 8px 16px;
-    color: @on_surface;
+    color: #c0caf5;
 }
 #custom-weather {
     border-radius: 24px 10px 24px 10px;
@@ -113,19 +110,19 @@ tooltip label {
 /*---------------Tray, Clock, Playerctl, Battery, Cpu, Temperature, Colorpicker, Memory, Idle_inhibitor----------------------*/
 #tray, #pulseaudio, #network, #battery, #cpu, #temperature, #custom-colorpicker, #memory, #custom-pacman, #idle_inhibitor,
 #custom-playerctl.backward, #custom-playerctl.play, #custom-playerctl.foward{
-    background: @surface;
+    background: #15161e;
     font-weight: bold;
     margin: 5px 0px;
 }
 #tray, #pulseaudio, #network, #battery{
-    color: @on_surface;
+    color: #c0caf5;
     border-radius: 10px 24px 10px 24px;
     padding: 0 20px;
     margin-left: 7px;
 }
 #clock {
-    color: @on_surface;
-    background: @surface;
+    color: #c0caf5;
+    background: #15161e;
     border-radius: 0px 0px 0px 40px;
     padding: 10px 10px 15px 25px;
     margin-left: 7px;
@@ -146,31 +143,31 @@ tooltip label {
 
 /*-----------Playerctl-------------------*/
 #custom-playerctl.backward, #custom-playerctl.play, #custom-playerctl.foward {
-    background: @surface;
+    background: #15161e;
     font-size: 22px;
 }
 #custom-playerctl.backward:hover, #custom-playerctl.play:hover, #custom-playerctl.foward:hover{
-    color: @on_surface;
+    color: #c0caf5;
 }
 #custom-playerctl.backward {
-    color: @tertiary;
+    color: #9fe044;
     border-radius: 24px 0px 0px 10px;
     padding-left: 16px;
     margin-left: 7px;
 }
 #custom-playerctl.play {
-    color: @on_primary_fixed_variant;
+    color: #c7a9ff;
     padding: 0 5px;
 }
 #custom-playerctl.foward {
-    color: @tertiary;
+    color: #9fe044;
     border-radius: 0px 10px 24px 0px;
     padding-right: 12px;
     margin-right: 7px
 }
 #custom-playerlabel {
-    background: @surface;
-    color: @on_surface;
+    background: #15161e;
+    color: #c0caf5;
     padding: 0 20px;
     border-radius: 24px 10px 24px 10px;
     margin: 5px 0;
@@ -187,8 +184,8 @@ tooltip label {
 
 /*-------------Launcher--------------*/
 #custom-launcher {
-    color: @on_tertiary_container;
-    background: @surface;
+    color: #8db0ff;
+    background: #15161e;
     margin: 0px 5px 0px 0px;
     padding: 0px 35px 0px 15px;
     border-radius: 0px 0px 40px 0px;
@@ -197,36 +194,35 @@ tooltip label {
 
 /*--------------Cpu, Termperature, Colorpicker, Memory, Idle_inhibitor----------------*/
 #custom-colorpicker, #cpu, #temperature, #memory, #custom-pacman,#idle_inhibitor {
-    background: @surface;
+    background: #15161e;
     font-size: 16px;
 }
 
 #cpu {
-    color: @tertiary;
+    color: #9fe044;
 }
 
 #memory {
-    color: @primary;
+    color: #8db0ff;
 }
 
 #temperature {
-    color: @tertiary;
+    color: #c7a9ff;
 }
 
 #custom-pacman {
-    color: @primary;
+    color: #a4daff;
 }
 
 #idle_inhibitor {
-    color: @on_surface;
+    color: #ff899d;
 }
 
 #idle_inhibitor.activated {
-    color: @error;
+    color: #9fe044;
 }
 
 #cpu {
-    color: @tertiary;
     border-radius: 24px 0px 0px 10px;
     padding-left: 16px;
     padding-right: 7px;
@@ -239,7 +235,7 @@ tooltip label {
 }
 
 #custom-colorpicker {
-    color: @tertiary;
+    color: #9fe044;
     border-radius: 0px 10px 24px 0px;
     padding-right: 12px;
     padding-left: 7px;
@@ -249,12 +245,12 @@ tooltip label {
 /*---------------Expand---------------*/
 #custom-expand {
     background: transparent;
-    color: @on_surface;
+    color: #c0caf5;
     margin: 1px;
     font-size: 22px;
 }
 
 #custom-expand:hover {
-    color: @primary;
+    color: #9fe044;
 }
 

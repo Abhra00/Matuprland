@@ -6,6 +6,5 @@
  */
 
 
-@import 'matugen/matugen-swaync.css';
-@import 'themes/matugen-nc/notifications.css';
-@import 'themes/matugen-nc/control-center.css';
+@import 'themes/minimal/notifications.css';
+@import 'themes/minimal/control-center.css';

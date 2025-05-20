@@ -10,7 +10,7 @@ configuration {
     modi:                       "drun,run";
     show-icons:                 false;
     drun-display-format:        "{name}";
-    font:                       "GeistMono Nerd Font Propo 28";
+    font:                       "Iosevka Nerd Font Propo 28";
     hover-select:               true;
 }
 
@@ -120,7 +120,7 @@ element {
     cursor:                      pointer;
 }
 element-text {
-    font:                        "GeistMono Nerd Font Propo 28";
+    font:                        "Iosevka Nerd Font Propo 28";
     background-color:            transparent;
     text-color:                  inherit;
     cursor:                      inherit;

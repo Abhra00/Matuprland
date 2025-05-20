@@ -6,20 +6,17 @@
  */
 
 
-/*--------Importing matugen colors-----*/
-@import '~/.config/rofi/matugen/matugen-rofi.rasi'
-
 
 /*--------Color definitions------------*/
 
 * {
-       background:       @surface;
-       background-alt:   @surface-container-highest;
-       background-alpha: @surface-alpha;
-       foreground:       @on-surface;
-       border-color:     @tertiary;
-       selected:         @tertiary;
-       selected-text:    @surface;
-       active:           @primary;
-       urgent:           @error;
+       background:       #15161e;
+       background-alt:   #414868;
+       background-alpha: #15161eb3;
+       foreground:       #c0caf5;
+       border-color:     #9fe044;
+       selected:         #8db0ff;
+       selected-text:    #15161e;
+       active:           #bb9af7;
+       urgent:           #f7768e;
 }

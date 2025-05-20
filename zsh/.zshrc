@@ -45,34 +45,6 @@ zstyle ':completion:*' matcher-list \
 zstyle ':completion:*:warnings' format "%B%F{red}No matches for:%f %F{magenta}%d%b"
 zstyle ':completion:*:descriptions' format '%F{yellow}[-- %d --]%f'
 
-#  ┏┓┏┓┏┓━┓  ┏┓┏┓┏┓┳┳┏┓┳┓┏┓┏┓  ┏┓┏┓┳┓  ┏┓┏┓┏┓┏┳┓  ┏┳┓┏┓┳┓┳┳┓┳┳┓┏┓┓ 
-#  ┃┃┗┓┃  ┃  ┗┓┣ ┃┃┃┃┣ ┃┃┃ ┣   ┣ ┃┃┣┫  ┣ ┃┃┃┃ ┃    ┃ ┣ ┣┫┃┃┃┃┃┃┣┫┃ 
-#  ┗┛┗┛┗┛ ╹  ┗┛┗┛┗┻┗┛┗┛┛┗┗┛┗┛  ┻ ┗┛┛┗  ┻ ┗┛┗┛ ┻    ┻ ┗┛┛┗┛ ┗┻┛┗┛┗┗┛
-#                                                                  
-function osc7-pwd() {
-    emulate -L zsh # also sets localoptions for us
-    setopt extendedglob
-    local LC_ALL=C
-    printf '\e]7;file://%s%s\e\' $HOST ${PWD//(#m)([^@-Za-z&-;_~])/%${(l:2::0:)$(([##16]#MATCH))}}
-}
-
-function chpwd-osc7-pwd() {
-    (( ZSH_SUBSHELL )) || osc7-pwd
-}
-add-zsh-hook -Uz chpwd chpwd-osc7-pwd
-
-
-
-#  ┏┓┏┓┏┓┏┳┓  ┏┓┓┏┏┓┓ ┓   ┳┳┓┏┳┓┏┓┏┓┳┓┏┓┏┳┓┳┏┓┳┓      ┏┳┳┳┳┳┓┏┓┳┳┓┏┓  ┏┓┳┓┏┓┳┳┓┏┓┏┳┓
-#  ┣ ┃┃┃┃ ┃   ┗┓┣┫┣ ┃ ┃   ┃┃┃ ┃ ┣ ┃┓┣┫┣┫ ┃ ┃┃┃┃┃  ━━   ┃┃┃┃┃┃┃┃┃┃┃┃┓  ┃┃┣┫┃┃┃┃┃┃┃ ┃ 
-#  ┻ ┗┛┗┛ ┻   ┗┛┛┗┗┛┗┛┗┛  ┻┛┗ ┻ ┗┛┗┛┛┗┛┗ ┻ ┻┗┛┛┗      ┗┛┗┛┛ ┗┣┛┻┛┗┗┛  ┣┛┛┗┗┛┛ ┗┣┛ ┻ 
-#                                                                                   
-function jumping-prompt() {
-    print -Pn "\e]133;A\e\\"
-}
-
-add-zsh-hook -Uz precmd jumping-prompt
-
 
 #  ┓ ┏┏┓┳┏┳┓┳┳┓┏┓  ┳┓┏┓┏┳┓┏┓
 #  ┃┃┃┣┫┃ ┃ ┃┃┃┃┓  ┃┃┃┃ ┃ ┗┓
@@ -102,6 +74,16 @@ export SUDO_PROMPT="$fg[white]Deploying $fg[red]root access for %u $fg[blue]pass
 #   ┻ ┛┗┗┛  ┣┛┛┗┗┛┛ ┗┣┛ ┻ 
 #                         
 # !!! USING PURE ZSH PROMPT & IT WILL BE DOWNLOADED AUTOMATICALLY BY THE PLUGIN HELPER 🚀 !!!
+# !! PROMPT COLOR STYLING
+zstyle :prompt:pure:git:arrow color "#bb9af7"
+zstyle :prompt:pure:git:branch color "#8db0ff"
+zstyle :prompt:pure:path color "#c0caf5"
+zstyle :prompt:pure:prompt:error color "#ff899d"
+zstyle :prompt:pure:prompt:success color "#9fe044"
+zstyle :prompt:pure:prompt:continuation color "#8db0ff"
+zstyle :prompt:pure:suspended_jobs color "#c7a9ff"
+zstyle :prompt:pure:user color "#faba4a"
+zstyle :prompt:pure:user:root color "#c0caf5"
 
 
 
@@ -245,6 +227,9 @@ repos=(
 )
 plugin-load $repos
 
+# Styling of autosuggestions
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=12"
+
 # Keybinds for plugins
 bindkey '^[[A' history-substring-search-up
 bindkey '^[[B' history-substring-search-down
@@ -262,4 +247,4 @@ source <(fzf --zsh)
 #  ┣┫┃┃ ┃ ┃┃┗┓ ┃ ┣┫┣┫ ┃ 
 #  ┛┗┗┛ ┻ ┗┛┗┛ ┻ ┛┗┛┗ ┻ 
 #                       
-fastfetch --config $HOME/.config/fastfetch/config-aesthetic.jsonc
+python3 $HOME/.local/bin/anifetch.py -f "$HOME/Videos/Anifetch/video.mp4" -r 10 -W 110 -H 60 -c "--symbols wide --fg-only" -ff
