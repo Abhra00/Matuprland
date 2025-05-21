@@ -1,0 +1,67 @@
+/* cosmetic and focus tweaks for yt */
+/* credit to various userstyles makers for some pieces of this */
+
+/* grid view */
+#items.ytd-grid-renderer>ytd-grid-video-renderer:has(ytd-thumbnail-overlay-time-status-renderer[overlay-style="SHORTS"]) {
+  display: none;
+}
+
+/* list view */
+ytd-item-section-renderer:not(:has(ytd-grid-renderer)):has(ytd-thumbnail-overlay-time-status-renderer[overlay-style="SHORTS"]) {
+  display: none; 
+}
+
+/* hide recs */
+#secondary {
+  display: none !important;
+}
+
+/* make video fill the remaining space */
+#primary {
+    width: 100% !important;
+    flex: 1 !important;
+    max-width: none !important;
+}
+
+/* hide yt sidebar */
+ytd-mini-guide-renderer, 
+ytd-guide-renderer {
+  display: none !important;
+}
+
+/* hide yt top bar */
+.ytd-masthead {
+  margin: 0 !important;
+  display: none !important;
+}
+
+/* remove extra padding and ensure content is full-width on channel page*/
+.ytd-app {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  margin-left: 0 !important;
+}
+
+html:not(.ytd-watch-flexy) ytd-watch-flexy[flexy] #player {
+  width: 100% !important;
+  max-width: 1400px;
+  margin: 0 auto !important;
+}
+
+/* remove that annoying thing yt adds in dark mode */
+.ytp-gradient-bottom {
+  display: none !important;
+}
+
+/* reshape some elements */
+.chip-container {
+  border-radius: 0% !important;
+}
+
+.ytd-thumbnail {
+  border-radius: 10% !important;
+}
+
+.yt-spec-avatar-shape__image {
+  border-radius: 10% !important;
+}
