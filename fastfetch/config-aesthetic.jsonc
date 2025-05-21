@@ -1,0 +1,60 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
+  "logo": {
+    "type": "file",
+    "height": 25,
+    "width": 15,
+    "padding": {
+	    "top": 0,
+	    "right": 2
+    },
+    "source": "${HOME}/.config/fastfetch/anime-logo.txt"
+  },
+  "modules": [
+    {
+      "type": "custom",
+      "format": "\u001B[31mB U G S @ A R C H L A N D"
+    },
+    {
+      "type": "custom",
+      "format": "___________________________________"
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": "Arch Linux x86_64"
+    },
+    {
+      "type": "memory",
+      "key": " ",
+      "format": "{1} / {2}"
+    },
+    {
+      "type": "packages",
+      "key": " ",
+      "format": "{1} packages"
+    },
+    {
+      "type": "terminal",
+      "key": " ",
+      "format": "{5}"
+    },
+    {
+      "type": "wm",
+      "key": " ",
+      "format": "{1}"
+    },
+    {
+      "type": "custom",
+      "format": "github.com/Abra00"
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[31m▂▂ \u001b[32m▂▂ \u001b[33m▂▂ \u001b[34m▂▂ \u001b[35m▂▂ \u001b[36m▂▂ \u001b[39m▂▂ ",
+    },
+    {
+      "type": "custom",
+      "format": "___________________________________"
+    }
+  ]
+}
