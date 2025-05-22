@@ -12,7 +12,7 @@
 * {
        background:       #15161e;
        background-alt:   #414868;
-       background-alpha: #15161eb3;
+       background-alpha: #15161e33;
        foreground:       #c0caf5;
        border-color:     #9fe044;
        selected:         #8db0ff;

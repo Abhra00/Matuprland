@@ -1,0 +1,88 @@
+
+/***
+ *    ┳┓┓ ┳┳┏┓┏┳┓┏┓┏┓┓┏┳┳┓┏┓┳┓┳┳
+ *    ┣┫┃ ┃┃┣  ┃ ┃┃┃┃┣┫┃┃┃┣ ┃┃┃┃
+ *    ┻┛┗┛┗┛┗┛ ┻ ┗┛┗┛┛┗┛ ┗┗┛┛┗┗┛
+ *                              
+ */
+
+/* Config and colors ----------------------------------------------- */
+@import '~/.config/rofi/launchers/styles/shared/colors.rasi'
+@import '~/.config/rofi/launchers/styles/shared/fonts.rasi'
+
+
+
+configuration {
+  drun {
+    display-name: "";
+  }
+
+  run {
+    display-name: "";
+  }
+
+  window {
+    display-name: "";
+  }
+
+  timeout {
+    delay: 10;
+    action: "kb-cancel";
+  }
+}
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+  background-color: @background;
+  text-color: @foreground;
+}
+
+window {
+  transparency: "real";
+  width: 700px;
+}
+
+mainbox {
+  children: [inputbar, listview];
+}
+
+inputbar {
+  background-color: @background-alt;
+  children: [prompt, entry];
+}
+
+entry {
+  background-color: inherit;
+  padding: 12px 3px;
+}
+
+prompt {
+  background-color: inherit;
+  text-color: @active;
+  padding: 12px;
+}
+
+listview {
+  lines: 8;
+}
+
+element {
+  children: [element-icon, element-text];
+}
+
+element-icon {
+  padding: 10px 10px;
+  size: 20px;
+}
+
+element-text {
+  padding: 10px 0;
+}
+
+element-text selected {
+  text-color: @selected;
+}
+
