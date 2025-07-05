@@ -104,7 +104,7 @@
 		"interval": 30,   
 		"exec": "checkupdates | wc -l",
 		"exec-if": "exit 0",
-		"on-click": "foot --title PacUpdate sh -c 'sleep 0.1; paru -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
+		"on-click": "kitty --title PacUpdate sh -c 'sleep 0.1; paru -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
 		"signal": 8,
 		"tooltip": false
 	},
@@ -246,7 +246,7 @@
 		"format-linked": "{ifname} (No IP)",
 		"format-wifi": "  {signalStrength}%",
 		"tooltip-format": "Connected to {essid} {ifname} via {gwaddr}",
-		"on-click": "foot --title FootNmtui sh -c  'sleep 0.1; nmtui'"
+		"on-click": "kitty --title KittyNmtui sh -c  'sleep 0.1; nmtui'"
 	},
 
 	/*------------Tray--------------------*/

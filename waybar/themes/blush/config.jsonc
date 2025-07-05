@@ -143,7 +143,7 @@
 		 "interval": 30,   
 		 "exec": "checkupdates | wc -l",
 		 "exec-if": "exit 0",
-		 "on-click": "foot --title PacUpdate sh -c 'sleep 0.1; paru -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
+		 "on-click": "kitty --title PacUpdate sh -c 'sleep 0.1; paru -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
 		 "signal": 8,
 		 "tooltip": false
 	 },

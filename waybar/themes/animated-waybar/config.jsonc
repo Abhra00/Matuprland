@@ -261,7 +261,7 @@
 	    "format-disconnected": "󰤮 ON",
 	    "tooltip-format-wifi": "<span><b><u>{essid}</u></b></span>\t\t\t{ipaddr}\n\t {bandwidthDownBits} |  {bandwidthUpBits}",
 	    "tooltip-format-ethernet": "<span><b><u>{ifname}</u></b></span>\t\t\t{ipaddr}\n\t {bandwidthDownBits} |  {bandwidthUpBits}",
-	    "on-click": "foot --title FootNmtui sh -c 'sleep 0.1; nmtui'",
+	    "on-click": "kitty --title KittyNmtui sh -c 'sleep 0.1; nmtui'",
 	    "on-click-right": "sleep 0.1 && nm-connection-editor"
     },
 
@@ -330,7 +330,7 @@
 	    "interval": 30,
 	    "exec": "checkupdates | wc -l",
 	    "exec-if": "exit 0",
-	    "on-click": "foot --title PacUpdate sh -c 'sleep 0.1; paru -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
+	    "on-click": "kitty --title PacUpdate sh -c 'sleep 0.1; paru -Syu; echo Done - Press enter to exit; read'; pkill -SIGRTMIN+8 waybar",
 	    "signal": 8,
 	    "tooltip": false
     },

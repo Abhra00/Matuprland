@@ -9,10 +9,10 @@ version_check = false
 
 # Templates
 
-# Foot
-[templates.foot]
-input_path = '~/.config/matugen/templates/matugen-foot.ini'
-output_path = '~/.config/foot/matugen/matugen-foot-colors.ini'
+# Kitty
+[templates.kitty]
+input_path = '~/.config/matugen/templates/matugen-kitty.conf'
+output_path = '~/.config/kitty/matugen/colors-matugen.conf'
 
 # Bat
 [templates.bat]
@@ -97,6 +97,11 @@ output_path = '~/.cache/wal/colors'
 input_path = '~/.config/matugen/templates/pywalfox-colors.json'
 output_path = '~/.cache/wal/colors.json'
 post_hook = 'pywalfox update'
+
+# Librewolf startup page
+[templates.librewolf]
+input_path = '~/.config/matugen/templates/matugen-librewolf-startup-page.css'
+output_path = '~/.local/share/startup-page/app.css'
 
 # Zathura
 [templates.zathura]
