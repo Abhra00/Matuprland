@@ -99,16 +99,6 @@
 </details>
 
 
-<details>
-<summary>
-  <img src="https://raw.githubusercontent.com/Tarikul-Islam-Anik/Telegram-Animated-Emojis/refs/heads/main/Animals%20and%20Nature/Fox.webp" alt="Firefox" width="32" height="32" />
-  Librewolf startup page
-</summary>
-  
-![Matugen Librewolf](https://github.com/Abhra00/Matuprland-assets/blob/main/Screenshot_01-Mar_20-04-15_1145.webp)
-
-</details>
-
 
 <details>
 <summary>
