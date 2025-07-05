@@ -5,7 +5,7 @@
 
 # Global Configs
 [config]
-version_check = true
+version_check = false
 
 # Templates
 
@@ -97,11 +97,6 @@ output_path = '~/.cache/wal/colors'
 input_path = '~/.config/matugen/templates/pywalfox-colors.json'
 output_path = '~/.cache/wal/colors.json'
 post_hook = 'pywalfox update'
-
-# Librewolf startup page
-[templates.librewolf]
-input_path = '~/.config/matugen/templates/matugen-librewolf-startup-page.css'
-output_path = '~/.local/share/startup-page/app.css'
 
 # Zathura
 [templates.zathura]
