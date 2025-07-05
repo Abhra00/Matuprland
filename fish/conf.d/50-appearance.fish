@@ -12,7 +12,6 @@ set -g fish_color_param 	      brwhite
 
 
 
-# Prompt (Download HYDRO prompt using fundle)
-fundle plugin 'jorgebucaran/hydro'
-fundle init
+# Prompt (Starship)
+starship init fish | source
 
