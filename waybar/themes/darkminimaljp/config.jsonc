@@ -50,7 +50,7 @@
 		    "7": "七",
 		    "8": "八",
 		    "9": "九",
-		    "10": "十",
+		    "10": "十"
 
 	    },
 	    "persistent-workspaces": {
@@ -154,15 +154,15 @@
 	    "format-time": "{H}h {M}min",
 	    "tooltip": true
     },
-
     "custom/weather": {
 	    "format": "{}",
-	    "format-alt": " {alt}",
+	    "format-alt": "{alt}: {}",
 	    "format-alt-click": "click",
 	    "interval": 3600,
 	    "return-type": "json",
-	    "exec": "$HOME/.config/waybar/scripts/Weather.sh",
-	    "exec-if": "ping wttr.in -c1",
+	    "exec": "$HOME/.config/waybar/scripts/Weather.py",
+	    //"exec": "$HOME/.config/hypr/UserScripts/Weather.sh",
+	    //"exec-if": "ping wttr.in -c1",
 	    "tooltip": true
     },
     "idle_inhibitor": {

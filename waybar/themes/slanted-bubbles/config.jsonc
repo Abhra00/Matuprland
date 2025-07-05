@@ -57,15 +57,15 @@
 	/*-----------Weather---------------*/
 	"custom/weather": {
 		"format": "{}",
-		"format-alt": " {alt}",
+		"format-alt": "{alt}: {}",
 		"format-alt-click": "click",
 		"interval": 3600,
 		"return-type": "json",
-		"exec": "$HOME/.config/waybar/scripts/Weather.sh",
-		"exec-if": "ping wttr.in -c1",
-		"tooltip": true
+		"exec": "$HOME/.config/waybar/scripts/Weather.py",
+	    	//"exec": "$HOME/.config/hypr/UserScripts/Weather.sh",
+	    	//"exec-if": "ping wttr.in -c1",
+	    	"tooltip": true
 	},
-
 	/*-----------SwayNC----------------*/
 
 	"custom/swaync": {
