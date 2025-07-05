@@ -134,7 +134,8 @@
 
 /* Label widget */
 .widget-label {
-  margin: 6px 6px 6px 105px;
+  margin: 6px 6px 6px 140px;
+  color: @accent
 }
   
 /* Notification clear button */

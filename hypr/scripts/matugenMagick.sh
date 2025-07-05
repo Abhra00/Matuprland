@@ -42,8 +42,8 @@ magick $HOME/.config/rofi/images/currentWal.sqre \( -size 500x500 xc:white -fill
 
 # copy the wallpaper in current-wallpaper file
 wait $!
-cp -r "$wallpaper_path" "$HOME/.current_wallpaper"
+ln -sf "$wallpaper_path" "$HOME/.local/share/bg"
 
 # send notification after completion
 wait $!
-notify-send -e -h string:x-canonical-private-synchronous:matugen_notif "MatugenMagick" "Matugen & ImageMagick has completed its job" -i $HOME/.current_wallpaper
+notify-send -e -h string:x-canonical-private-synchronous:matugen_notif "MatugenMagick" "Matugen & ImageMagick has completed its job" -i $HOME/.local/share/bg

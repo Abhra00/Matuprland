@@ -60,7 +60,7 @@
     },
     "label": {
       "max-lines": 1,
-      "text": "󰻀 𝙈𝙖𝙩𝙪𝙜𝙚𝙣 𝙎𝙬𝙖𝙮𝙉𝘾"
+      "text": "󰬚󰬞󰬈󰬠󰬕󰬊"
     },
     "mpris": {
       "image-size": 96,
@@ -72,7 +72,7 @@
     },
     "backlight": {
       "label": "󰃟 ",
-      "device": "amdgpu_bl1"
+      "device": "amdgpu_bl2"
     },
     "buttons-grid": {
       "actions": [
