@@ -11,7 +11,7 @@ alias ll='eza -lga --icons --color=always'                 # long + git + all + 
 alias lsd='eza -d */ --icons --color=always'               # directories only
 alias lt='eza --tree --icons --color=always'               # tree view
 alias l1='eza -1 --icons --color=always'                   # one entry per line
-alias cat='bat --theme=base16'				   # bat for cat
+alias cat='bat --theme=matugen-bat-colors'				         # bat for cat
 
 # ── File Utilities ────────────────────────────────────────
 alias cp='cp -iv'

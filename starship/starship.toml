@@ -39,18 +39,17 @@ truncation_symbol = ""
 format = "󰜥 [](bold fg:cyan)[$symbol $branch(:$remote_branch)](fg:black bg:cyan)[ ](bold fg:cyan)"
 
 [git_status]
-format = '$all_status$ahead_behind '
-ahead = '[⬆](bold purple) '
-behind = '[⬇](bold purple) '
-staged = '[✚](green) '
-deleted = '[✖](red) '
-renamed = '[➜](purple) '
-stashed = '[✭](cyan) '
-untracked = '[◼](white) '
-modified = '[✱](blue) '
-conflicted = '[═](yellow) '
-diverged = '⇕ '
-up_to_date = ''
+stashed = "[${count}*](fg:green)" 
+modified = "[${count}+](fg:yellow)" 
+deleted =  "[${count}-](fg:red)" 
+conflicted =  "[${count}~](fg:red)" 
+ahead = "⇡${count}"
+behind = "⇣${count}"
+untracked = "[${count}?](fg:blue)" 
+staged = "[${count}+](fg:green)" 
+style = "fg:yellow"
+format = '([\[$all_status$ahead_behind\]]($style) )'
+
 
 
 [directory]
