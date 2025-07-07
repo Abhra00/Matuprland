@@ -18,8 +18,8 @@
        background-alpha: @surface-alpha;
        foreground:       @on-surface;
        border-color:     @tertiary;
-       selected:         @tertiary;
+       selected:         @primary-fixed;
        selected-text:    @surface;
-       active:           @primary;
+       active:           @tertiary;
        urgent:           @error;
 }
