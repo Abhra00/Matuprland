@@ -58,6 +58,11 @@ post_hook = 'swaync-client -rs'
 input_path = '~/.config/matugen/templates/matugen-gtk.css'
 output_path = '~/.config/gtk-3.0/gtk.css'
 
+# Gtk4
+[templates.gtk4]
+input_path = '~/.config/matugen/templates/matugen-gtk.css'
+output_path = '~/.config/gtk-4.0/gtk.css'
+
 # Qt5
 [templates.qt5]
 input_path = '~/.config/matugen/templates/qtct-colors.conf'
