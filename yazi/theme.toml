@@ -37,7 +37,7 @@ count_selected = { fg = "white", bg = "yellow" }
 
 # Border
 border_symbol = "│"
-border_style  = { fg = "gray", bold = true }
+border_style  = { fg = "green", bold = true }
 
 # Highlighting
 syntect_theme = ""
@@ -58,8 +58,8 @@ unset_alt  = { fg = "red", bg = "gray" }
 
 [status]
 overall   = { bold = true }
-sep_left  = ["░▒▓","▓▒░"]
-sep_right = ["░▒▓","▓▒░"]
+sep_left  = ["",""]
+sep_right = ["",""]
 
 # Permissions
 perm_sep = { fg = "darkgray" }
