@@ -20,7 +20,6 @@
 	"modules-center": ["clock", "custom/notification" ],
 	"modules-right": [
 		"privacy",
-		"custom/playerctl",
 		"tray",
 		"group/group-audio",
 		"group/group-power",
@@ -133,17 +132,7 @@
 	    ]
     },
 
-    "custom/playectl": {
-	    "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
-	    "format": "<span>󰎈 {} 󰎈</span>",
-	    "max-length": 40,
-	    "on-click": "playerctl previous",
-	    "on-click-right": "playerctl next",
-	    "on-click-middle": "playerctl play-pause",
-	    "on-scroll-up": "playerctl volume 0.05+",
-	    "on-scroll-down": "playerctl volume 0.05-",
-	    "return-type": "json"
-    },
+
 
     "tray": {
 	    "icon-size": 15,
@@ -156,7 +145,7 @@
 		    "transition-duration": 500,
 		    "transition-left-to-right": false
 	    },
-	    "modules": ["pulseaudio#output", "pulseaudio#input"]
+	    "modules": ["pulseaudio#output", "custom/playerctl", "pulseaudio#input"]
     },
 
     "pulseaudio#output": {
@@ -179,6 +168,17 @@
 	    "max-volume": 200
     },
 
+    "custom/playerctl": {
+	    "exec": "playerctl -a metadata --format '{\"text\": \"{{artist}} - {{markup_escape(title)}}\", \"tooltip\": \"{{playerName}} : {{markup_escape(title)}}\", \"alt\": \"{{status}}\", \"class\": \"{{status}}\"}' -F",
+	    "format": "<span>󰎈 {} 󰎈</span>",
+	    "max-length": 25,
+	    "on-click": "playerctl previous",
+	    "on-click-right": "playerctl next",
+	    "on-click-middle": "playerctl play-pause",
+	    "on-scroll-up": "playerctl volume 0.05+",
+	    "on-scroll-down": "playerctl volume 0.05-",
+	    "return-type": "json"
+    },
     "pulseaudio#input": {
 	    "format": "{format_source}",
 	    "format-source": " {volume}",
