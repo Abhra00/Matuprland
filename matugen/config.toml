@@ -83,25 +83,11 @@ output_path = '~/.config/Kvantum/matugen/matugen.kvconfig'
 input_path = '~/.config/matugen/templates/matugen-cava'
 output_path = '~/.config/cava/config'
 
-# Neovim & Nvchad
-[templates.neovim-nvchad]
-input_path = '~/.config/matugen/templates/matugen-nvchad.lua'
-output_path = '~/.cache/wal/base46-dark.lua'
-
-[templates.neovim-nvchad-colors]
-input_path = '~/.config/matugen/templates/matugen-nvchad-colors'
-output_path = '~/.cache/wal/colors'
-
 # Pywalfox
 [templates.pywalfox]
 input_path = '~/.config/matugen/templates/pywalfox-colors.json'
 output_path = '~/.cache/wal/colors.json'
 post_hook = 'pywalfox update'
-
-# Librewolf startup page
-[templates.librewolf]
-input_path = '~/.config/matugen/templates/matugen-librewolf-startup-page.css'
-output_path = '~/.local/share/startup-page/app.css'
 
 # Zathura
 [templates.zathura]
