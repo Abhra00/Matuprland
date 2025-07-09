@@ -43,12 +43,7 @@
 
 	/*----------Hyprland Workspace----------*/
 	"hyprland/workspaces": {
-		"format": "{id}",
-		"format-icons": {
-			"active": " ",
-			"default": " ",
-			"urgent": " "
-		},
+		"format": "{name}",
 		"on-click": "activate",
 		"on-scroll-down": "hyprctl dispatch workspace e+1",
 		"on-scroll-up": "hyprctl dispatch workspace e-1"
