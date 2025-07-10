@@ -45,13 +45,13 @@ format = '[](bold fg:bright-black)[$symbol $branch(:$remote_branch)](fg:yello
 #------gitStatus-------#
 #----------------------#
 [git_status]
-stashed = '[${count}*](fg:green)' 
-modified = '[${count}+](fg:yellow)' 
-deleted =  '[${count}-](fg:red)' 
-conflicted =  '[${count}~](fg:red)' 
-ahead = '⇡$[{count}]'
-behind = '⇣$[{count}]'
-untracked = '[${count}?](fg:blue)' 
-staged = '[${count}+](fg:green)' 
-style = 'fg:yellow'
 format = '([\[$all_status$ahead_behind\]]($style) )'
+stashed = "[${count}*](fg:green)" 
+modified = "[${count}+](fg:yellow)" 
+deleted =  "[${count}-](fg:red)" 
+conflicted =  "[${count}~](fg:red)" 
+ahead = "⇡${count}"
+behind = "⇣${count}"
+untracked = "[${count}?](fg:blue)" 
+staged = "[${count}+](fg:green)" 
+
