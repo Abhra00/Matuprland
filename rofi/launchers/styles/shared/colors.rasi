@@ -19,6 +19,7 @@
        foreground:       @on-surface;
        border-color:     @tertiary;
        selected:         @primary-fixed;
+       selected-alpha:   @primary-fixed-alpha;
        selected-text:    @surface;
        active:           @tertiary;
        urgent:           @error;

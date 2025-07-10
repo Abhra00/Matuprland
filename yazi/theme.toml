@@ -37,15 +37,15 @@ count_selected = { fg = "white", bg = "yellow" }
 
 # Border
 border_symbol = "│"
-border_style  = { fg = "green", bold = true }
+border_style  = { fg = "white", bold = true }
 
 # Highlighting
 syntect_theme = ""
 
 
 [mode]
-normal_main = { bg = "green", fg = "black", bold = true }
-normal_alt = { bg = "darkgray", fg = "white", bold = true }
+normal_main = { bg = "yellow", fg = "black", bold = true }
+normal_alt = { bg = "green", fg = "black", bold = true }
 
 # Select mode
 select_main = { bg = "red", bold = true }
@@ -57,9 +57,9 @@ unset_alt  = { fg = "red", bg = "gray" }
 
 
 [status]
-overall   = { bold = true }
-sep_left  = ["",""]
-sep_right = ["",""]
+overall   = { bold = true, bg = "darkgray" }
+sep_left  = ["",""]
+sep_right = ["",""]
 
 # Permissions
 perm_sep = { fg = "darkgray" }

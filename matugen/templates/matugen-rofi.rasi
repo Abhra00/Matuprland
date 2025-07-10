@@ -9,6 +9,7 @@
 * {
     primary: {{colors.primary.default.hex}};
     primary-fixed: {{colors.primary_fixed.default.hex}};
+    primary-fixed-alpha: {{colors.primary_fixed.default.rgba | set_alpha: 0.2}};
     primary-fixed-dim: {{colors.primary_fixed_dim.default.hex}};
     on-primary: {{colors.on_primary.default.hex}};
     on-primary-fixed: {{colors.on_primary_fixed.default.hex}};
