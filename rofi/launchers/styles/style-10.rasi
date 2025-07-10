@@ -94,13 +94,13 @@ entry {
 listview {
     enabled:                     true;
     columns:                     1;
-    lines:                       1;
+    lines:                       5;
     cycle:                       true;
     dynamic:                     true;
     scrollbar:                   false;
     layout:                      vertical;
     reverse:                     false;
-    fixed-height:                true;
+    fixed-height:                false;
     fixed-columns:               true;
     
     spacing:                     5px;
