@@ -8,7 +8,7 @@
 </h3>
 
 <h4 align="center">
-  <a href="https://github.com/Abhra00/walls">My wallpapers!</a>
+  <a href="https://github.com/Abhra00/walls">My wallpaper collection!</a>
   </h4>
 
 >   [!Caution]
